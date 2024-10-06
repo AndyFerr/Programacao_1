@@ -1,0 +1,10 @@
+sites
+assets
+robots.txt (permissões de acesso ao site)
+
+
+sitemap.xml
+
+
+
+IDOR (Insecure Dorect Object Reference) - when you access other data that should not be for you just by changing the URL

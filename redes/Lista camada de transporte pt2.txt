@@ -1,0 +1,9 @@
+1- Trata-se de um "serviço" do TCP que faz o controle da velocidade de recebimento de pacotes evitando que o buffer de recepção seja estourado.
+
+2- É um algoritmo que faz o controle do congestionamento com o TCP de forma que toda vez que for detectada alguma perda de pacote, o valor do CongWind cai pela metade, e quando houver largura de banda disponível o valor da CongWind é aumentado linearmente.
+
+3- Quando uma sessão TCP começa, o valor de CongWind é inicializado em 1 MSS e então é aumentado de forma exponencial até que haja uma perda de pacote, então o valor cai pela metade e é então aumentado de forma linear.
+
+4- Durante o three-way-handshake e o final da conexão o cliente e o servidor passam por 6 estados. Do lado do cliente: Envia o SYN, recebe o SYN-ACK (estabelece a conexão), envia o FIN (após os pacotes trocados inicia-se o fechamento da conexão), recebe o ACK (não envia nada), recebe o FIN e envia o ACK, após 30 segundos a conexão é encerrada. Do lado do servidor ele começa recebendo o SYN e enviando o SYN-ACK, recebe o ACK e não envia nada, recebe o FIN e envia o ACK, envia o FIN e por fim recebe o ACk, encerrando de vez a conexão.
+
+5- A conexão TCP apresenta uma transmissão confiável porque há o estabelecimento de uma conexão com uma comunicação inicial entre o cliente e o servidor,  e no envio dos pacotes ainda há a confirmação de recebimento dos mesmos.
